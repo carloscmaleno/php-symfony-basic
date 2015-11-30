@@ -28,6 +28,11 @@ class AppKernel extends Kernel
 
         // Useful third party bundles
         $bundles[] = new FOS\UserBundle\FOSUserBundle();
+        $bundles[] = new Sonata\CoreBundle\SonataCoreBundle();
+        $bundles[] = new Sonata\BlockBundle\SonataBlockBundle();
+
+        $bundles[] = new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle();
+        $bundles[] = new Sonata\AdminBundle\SonataAdminBundle();
 
         // My bundles
         $bundles[] = new AppBundle\AppBundle();
