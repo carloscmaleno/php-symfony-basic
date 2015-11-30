@@ -38,4 +38,9 @@
             </exclude>
         </whitelist>
     </filter>
+
+    <logging>
+        <log type="coverage-html"   target="../report/coverage/html" lowUpperBound="35" highLowerBound="70"/>
+        <log type="testdox-text"    target="../report/test/testdox.txt"/>
+    </logging>
 </phpunit>

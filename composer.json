@@ -7,6 +7,8 @@
             "": "src/"
         }
     },
+    "prefer-stable" : true,
+    "minimum-stability" : "dev",
     "require": {
         "php": ">=5.3.9",
         "symfony/symfony": "2.7.*",
@@ -20,9 +22,9 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "twig/twig" : "~1.22",
         "friendsofsymfony/user-bundle": "~2.0@dev",
-        "sonata-project/core-bundle": "^2.3",
-        "sonata-project/admin-bundle": "2.3.*",
-        "sonata-project/doctrine-orm-admin-bundle": "2.3.*"
+        "sonata-project/core-bundle": "2.3.10",
+        "sonata-project/admin-bundle": "2.3.7",
+        "sonata-project/doctrine-orm-admin-bundle": "2.3.3"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
@@ -47,7 +49,8 @@
         ]
     },
     "config": {
-        "bin-dir": "bin"
+        "bin-dir": "bin",
+        "preferred-install": "dist"
     },
     "extra": {
         "symfony-app-dir": "app",
