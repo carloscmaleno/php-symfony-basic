@@ -2,17 +2,27 @@
 
 namespace AppBundle\Tests\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Client;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class DefaultControllerTest extends WebTestCase
 {
+    /** @var  Client */
+    private $client;
+
+    public function setUp()
+    {
+        $this->client = static::createClient();
+    }
+
     public function testIndex()
     {
-        $client = static::createClient();
+        $this->client->request('GET', '/');
+        $this->assertTrue($this->client->getResponse()->isSuccessful());
+    }
 
-        $crawler = $client->request('GET', '/');
-
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertContains('Welcome to Symfony', $crawler->filter('#container h1')->text());
+    public function testAdminRedirect(){
+        $this->client->request('GET', '/admin');
+        $this->assertEquals(301, $this->client->getResponse()->getStatusCode());
     }
 }
