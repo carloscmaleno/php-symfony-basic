@@ -9,8 +9,17 @@
 /composer.phar
 /vendor/
 /web/bundles/
+
+#copy from dist files
 /web/config.php
 /web/.htaccess
 /web/app_dev.php
 
+#grunt output folder
+/web/assets
+
+#folder result testing
 report
+
+#folder node modules
+node_modules

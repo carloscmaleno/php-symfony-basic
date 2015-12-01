@@ -1,0 +1,35 @@
+{
+  "name": "php-symfony-basic",
+  "version": "0.0.1",
+  "description": "Basic Symfony project",
+  "main": "package.json",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/carloscmaleno/php-symfony-basic.git"
+  },
+  "keywords": [
+    "php",
+    "symfony",
+    "grunt"
+  ],
+  "author": "Carlos Coronado",
+  "type": "PHP",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/carloscmaleno/php-symfony-basic/issues"
+  },
+  "devDependencies": {
+    "bootstrap": "~3.3.5",
+    "grunt" : "0.4.0",
+    "grunt-cli": "~0.1.13",
+    "grunt-contrib-copy": "~0.8.1",
+    "grunt-contrib-cssmin": "~0.14.0",
+    "grunt-contrib-imagemin": "~0.9.4",
+    "grunt-contrib-uglify": "~0.9.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "jquery": "~1.11"
+  }
+}

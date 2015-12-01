@@ -1,7 +1,7 @@
 {
-    "name": "carlos/_pre",
+    "name": "carlos/php-symfony-basic",
     "license": "proprietary",
-    "type": "project",
+    "type": "PHP",
     "autoload": {
         "psr-4": {
             "": "src/"
