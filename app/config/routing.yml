@@ -12,3 +12,7 @@ admin_area:
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
+voucher:
+    resource: "@VoucherBundle/Controller/"
+    type:     annotation
+    prefix:   /

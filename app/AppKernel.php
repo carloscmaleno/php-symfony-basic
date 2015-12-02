@@ -16,7 +16,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
-            new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
@@ -37,6 +37,7 @@ class AppKernel extends Kernel
         // My bundles
         $bundles[] = new AppBundle\AppBundle();
         $bundles[] = new UserBundle\UserBundle();
+        $bundles[] = new VoucherBundle\VoucherBundle();
 
         return $bundles;
     }

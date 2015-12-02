@@ -18,11 +18,18 @@ class DefaultControllerTest extends WebTestCase
     public function testIndex()
     {
         $this->client->request('GET', '/');
-        $this->assertTrue($this->client->getResponse()->isSuccessful());
+        $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
     }
 
-    public function testAdminRedirect(){
+    public function testAdminRedirect()
+    {
         $this->client->request('GET', '/admin');
-        $this->assertEquals(301, $this->client->getResponse()->getStatusCode());
+        $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
+    }
+
+    public function testLogin()
+    {
+        $this->client->request('GET', '/login');
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
     }
 }

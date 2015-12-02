@@ -1,0 +1,6 @@
+services:
+    voucher.service:
+        class: VoucherBundle\Services\VoucherService
+        arguments:
+            - @doctrine.orm.default_entity_manager
+            - @session
