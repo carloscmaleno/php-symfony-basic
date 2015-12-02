@@ -13,7 +13,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="index")
+     * @Route("/", name="page.index")
      */
     public function indexAction(Request $request)
     {
@@ -21,7 +21,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/login", name="login")
+     * @Route("/login", name="page.login")
      * @Method("GET")
      */
     public function showLoginAction(Request $request)
@@ -30,7 +30,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/login", name="loginaction")
+     * @Route("/login", name="action.index")
      * @Method("POST")
      */
     public function loginAction(Request $request)
@@ -38,7 +38,7 @@ class DefaultController extends Controller
         $user = $this->getUser();
 
         if (is_object($user) && $user instanceof UserInterface) {
-            return new RedirectResponse($this->generateUrl('/home'));
+            return new RedirectResponse($this->generateUrl('page.index'));
         }
 
         $userManager = $this->get('fos_user.user_manager');
@@ -70,5 +70,29 @@ class DefaultController extends Controller
         $response->headers->set('Content-Type', 'application/json');
 
         return $response;
+    }
+
+    /**
+     * Show page Legal Terms
+     * @Route("/legal", name="page.legal")
+     * @Method("GET")
+     * @param Request $request
+     * @return Response
+     */
+    public function legalPageAction(Request $request)
+    {
+        return $this->render('default/legal.html.twig');
+    }
+
+    /**
+     * Show page contact form
+     * @Route("/contact", name="page.contact")
+     * @Method("GET")
+     * @param Request $request
+     * @return Response
+     */
+    public function contactPageAction(Request $request)
+    {
+        return $this->render('default/contact.html.twig');
     }
 }

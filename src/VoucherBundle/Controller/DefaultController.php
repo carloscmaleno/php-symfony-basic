@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/code", name="codeIndex")
+     * @Route("/code", name="page.code")
      * @Method("GET")
      */
     public function indexAction(Request $request)
@@ -21,7 +21,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/code", name="codeSubmit")
+     * @Route("/code", name="action.code")
      * @Method("POST")
      */
     public function saveAction(Request $request)
@@ -48,7 +48,7 @@ class DefaultController extends Controller
             return $this->getAjaxResponse(true);
 
         } else {
-            return $this->redirect($this->generateUrl('codeIndex'));
+            return $this->redirect($this->generateUrl('page.code'));
         }
     }
 

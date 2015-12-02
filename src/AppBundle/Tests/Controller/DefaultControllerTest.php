@@ -16,23 +16,26 @@ class DefaultControllerTest extends WebTestCase
         $this->client = static::createClient();
     }
 
-    public function testIndex()
+    /**
+     * @dataProvider getPublicUrls
+     * @param $url
+     */
+    public function testPublicUrl($url)
     {
-        $this->client->request('GET', '/');
-        $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
+        $this->client->request('GET', $url);
+        $this->assertTrue($this->client->getResponse()->isSuccessful());
     }
 
-    public function testAdminRedirect()
+    /**
+     * @dataProvider getPrivateUrls
+     * @param $url
+     */
+    public function testPrivateUrl($url)
     {
-        $this->client->request('GET', '/admin');
-        $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
+        $this->client->request('GET', $url);
+        $this->assertTrue($this->client->getResponse()->isRedirect());
     }
 
-    public function testLogin()
-    {
-        $this->client->request('GET', '/login');
-        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
-    }
 
     public function testLoginError()
     {
@@ -65,5 +68,22 @@ class DefaultControllerTest extends WebTestCase
 
         $em->remove($user);
         $em->flush();
+    }
+
+    public function getPublicUrls()
+    {
+        return array(
+            array('/login'),
+            array('/contact'),
+            array('/legal'),
+        );
+    }
+
+    public function getPrivateUrls()
+    {
+        return array(
+            array('/'),
+            array('/admin'),
+        );
     }
 }
