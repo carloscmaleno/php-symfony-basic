@@ -40,4 +40,5 @@ security:
         - { path: ^/contact,    role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/legal,      role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/,     role: ROLE_ADMIN }
+        - { path: ^/_wdt,       role: IS_AUTHENTICATED_ANONYMOUSLY } #remove profiler
         - { path: ^/,           role: ROLE_USER }

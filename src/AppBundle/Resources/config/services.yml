@@ -1,0 +1,6 @@
+services:
+  app.template_listener:
+    class: AppBundle\EventListener\TemplateListener
+    arguments: ["@twig", "@session"]
+    tags:
+         - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }
