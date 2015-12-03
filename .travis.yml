@@ -4,7 +4,7 @@ sudo: false
 
 install:
   - cp app/config/parameters.yml.travis app/config/parameters.yml
-  - composer update --dev
+  - composer --memory=2G update --dev
   - npm install
   - php app/console doctrine:database:create --env=test
   - php app/console doctrine:schema:create --env=test
@@ -17,6 +17,6 @@ php:
   - 7
   - hhvm
 
-before_script: echo "memory_limit=100M" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+before_script: echo "memory_limit=1000M" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
 
 script: phpunit -c app/

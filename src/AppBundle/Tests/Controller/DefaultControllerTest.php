@@ -54,10 +54,7 @@ class DefaultControllerTest extends WebTestCase
         $user->setUsername('phpunit');
         $user->setEmail('php@unit.com');
         $user->setRoles(array('ROLE_USER'));
-
-        $encodedPassword = $encoder->encodePassword($user, 'phpunit');
-        $user->setPassword($encodedPassword);
-
+        $user->setPlainPassword('phpunit');
         $em->persist($user);
         $em->flush();
 
