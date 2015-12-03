@@ -4,7 +4,7 @@ sudo: false
 
 install:
   - cp app/config/parameters.yml.travis app/config/parameters.yml
-  - composer --memory=2G update --dev
+  - php -dmemory_limit=1G bin/composer.phar update
   - npm install
   - php app/console doctrine:database:create --env=test
   - php app/console doctrine:schema:create --env=test
