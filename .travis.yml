@@ -6,7 +6,7 @@ install:
   - php -i | grep memory_limit
   - cp app/config/parameters.yml.travis app/config/parameters.yml
   - wget https://getcomposer.org/composer.phar
-  - php -dmemory_limit=2G composer.phar update --no-interaction --prefer-source
+  - php -dmemory_limit=2G composer.phar update --no-interaction
   - npm install
   - php app/console doctrine:database:create --env=test
   - php app/console doctrine:schema:create --env=test
