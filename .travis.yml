@@ -1,0 +1,19 @@
+language: php
+
+sudo: false
+
+install:
+  - cp app/config/parameters.yml.travis app/config/parameters.yml
+  - composer update --no-interaction --prefer-source
+  - npm install
+  - php app/console doctrine:database:create --env=test
+  - php app/console doctrine:schema:create --env=test
+
+php:
+  - 5.3
+  - 5.4
+  - 5.5
+  - 5.6
+  - hhvm
+
+script: phpunit -c app/
