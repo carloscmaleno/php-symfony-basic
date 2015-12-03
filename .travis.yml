@@ -4,7 +4,7 @@ sudo: false
 
 install:
   - cp app/config/parameters.yml.travis app/config/parameters.yml
-  - composer update --no-interaction --prefer-source
+  - composer update --dev
   - npm install
   - php app/console doctrine:database:create --env=test
   - php app/console doctrine:schema:create --env=test
