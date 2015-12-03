@@ -1,0 +1,15 @@
+{% extends 'SonataAdminBundle:CRUD:base_list_field.html.twig' %}
+
+{% block field %}
+    <div>
+
+        {% if object.result == 10 %}
+            <span class="label label-info">info</span>
+        {% elseif object.result == 100 %}
+            <span class="label label-success">OK</span>
+        {% else %}
+            <span class="label label-danger">Fail</span>
+        {% endif %}
+
+    </div>
+{% endblock %}

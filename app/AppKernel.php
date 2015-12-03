@@ -16,7 +16,22 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
-            new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle()
+            new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+
+            // Useful third party bundles
+            new FOS\UserBundle\FOSUserBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+
+            // Sonata Admin bundles
+            new Sonata\CoreBundle\SonataCoreBundle(),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+
+            // My bundles
+            new AppBundle\AppBundle(),
+            new UserBundle\UserBundle(),
+            new VoucherBundle\VoucherBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
@@ -25,19 +40,6 @@ class AppKernel extends Kernel
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
         }
-
-        // Useful third party bundles
-        $bundles[] = new FOS\UserBundle\FOSUserBundle();
-        $bundles[] = new Sonata\CoreBundle\SonataCoreBundle();
-        $bundles[] = new Sonata\BlockBundle\SonataBlockBundle();
-
-        $bundles[] = new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle();
-        $bundles[] = new Sonata\AdminBundle\SonataAdminBundle();
-
-        // My bundles
-        $bundles[] = new AppBundle\AppBundle();
-        $bundles[] = new UserBundle\UserBundle();
-        $bundles[] = new VoucherBundle\VoucherBundle();
 
         return $bundles;
     }

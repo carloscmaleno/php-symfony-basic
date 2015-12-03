@@ -81,6 +81,7 @@ class DefaultControllerTest extends WebTestCase
         return array(
             array('/'),
             array('/admin'),
+            array('/about'),
         );
     }
 }

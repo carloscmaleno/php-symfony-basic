@@ -1,0 +1,9 @@
+{% extends 'SonataAdminBundle::standard_layout.html.twig' %}
+
+{% block side_bar_nav %}
+    {{ knp_menu_render('sonata_admin_sidebar', {template: admin_pool.getTemplate('knp_menu_template')}) }}
+{% endblock side_bar_nav %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

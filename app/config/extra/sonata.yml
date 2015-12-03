@@ -1,11 +1,52 @@
+sonata_admin:
+    security:
+        handler:              sonata.admin.security.handler.noop
+        information:
+            id:                   []
+        admin_permissions:
+
+            # Defaults:
+            - CREATE
+            - LIST
+            - DELETE
+            - UNDELETE
+            - EXPORT
+            - OPERATOR
+            - MASTER
+        object_permissions:
+            - VIEW
+            - EDIT
+            - DELETE
+            - UNDELETE
+            - OPERATOR
+            - MASTER
+            - OWNER
+        acl_user_manager:     ~
+    title:                Admin Panel
+    title_logo:           images/logo.png
+    options:
+        html5_validate:                         true
+        confirm_exit:                           true
+        use_select2:                            true
+        use_icheck:                             true
+        dropdown_number_groups_per_colums:      2
+        title_mode:           'single_text'  # 'both', 'single_text' or 'single_image'
+
+    persist_filters:      false     # set to true to persist filter settings per admin module in the user's session
+
+    templates:
+        layout: :Admin:standard_layout.html.twig
+
 sonata_block:
     default_contexts: [cms]
     blocks:
+
         # enable the SonataAdminBundle block
         sonata.admin.block.admin_list:
-            contexts: [admin]
+            contexts:   [admin]
 
-
-sonata_admin:
-    security:
-        handler: sonata.admin.security.handler.role
+# enable Sonata admin datepicker
+twig:
+    form:
+        resources:
+            - 'SonataCoreBundle:Form:datepicker.html.twig'

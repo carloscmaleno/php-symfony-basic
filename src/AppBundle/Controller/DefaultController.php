@@ -95,4 +95,14 @@ class DefaultController extends Controller
     {
         return $this->render('default/contact.html.twig');
     }
+
+    /**
+     * Show page about
+     * @Route("/about", name="page.about")
+     * @Method("GET")
+     * @return Response
+     */
+    public function aboutPageAction(){
+        return $this->render('default/about.html.twig');
+    }
 }
