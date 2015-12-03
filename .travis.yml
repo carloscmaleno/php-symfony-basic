@@ -4,6 +4,7 @@ sudo: false
 
 install:
   - cp app/config/parameters.yml.travis app/config/parameters.yml
+  - wget -O bin/composer.phar https://getcomposer.org/composer.phar
   - php -dmemory_limit=1G bin/composer.phar update
   - npm install
   - php app/console doctrine:database:create --env=test
