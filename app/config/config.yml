@@ -14,7 +14,7 @@ parameters:
 
 framework:
     #esi:             ~
-    translator:      { fallback: "%locale%" }
+    translator: { fallbacks: [en] }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -22,8 +22,10 @@ framework:
     form:            ~
     csrf_protection: ~
     validation:      { enable_annotations: true }
+    #serializer:      { enable_annotations: true }
     templating:
         engines: ['twig']
+        #assets_version: SomeVersionScheme
     default_locale:  "%locale%"
     trusted_hosts:   ~
     trusted_proxies: ~
@@ -40,18 +42,6 @@ twig:
     strict_variables: "%kernel.debug%"
     globals:
         app_host_name: "%host_name%"
-
-# Assetic Configuration
-assetic:
-    debug:          "%kernel.debug%"
-    use_controller: false
-    bundles:        [ ]
-    filters:
-        cssrewrite: ~
-        jsqueeze: ~
-        scssphp:
-            # the formatter must be the FQCN (don't use the 'compressed' value)
-            formatter: "Leafo\\ScssPhp\\Formatter\\Compressed"
 
 # Doctrine Configuration
 doctrine:

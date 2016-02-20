@@ -32,7 +32,7 @@ class DefaultController extends Controller
             return $this->getAjaxResponse(false, 'Code not send');
         }
 
-        $voucher_manager = $this->getDoctrine()->getEntityManager()->getRepository('VoucherBundle:Voucher');
+        $voucher_manager = $this->getDoctrine()->getManager()->getRepository('VoucherBundle:Voucher');
         $voucher = $voucher_manager->findOneBy(array('code' => $code));
 
         if (empty($voucher) || $voucher->isUsed()) {
@@ -44,7 +44,6 @@ class DefaultController extends Controller
 
 
         if ($request->isXmlHttpRequest()) {
-
             return $this->getAjaxResponse(true);
 
         } else {

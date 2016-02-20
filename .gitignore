@@ -14,6 +14,7 @@
 /web/config.php
 /web/.htaccess
 /web/app_dev.php
+/web/index.php
 
 #grunt output folder
 /web/assets
@@ -23,3 +24,6 @@ report
 
 #folder node modules
 node_modules
+
+#remove IDE folder
+/.idea/

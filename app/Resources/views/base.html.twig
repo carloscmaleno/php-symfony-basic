@@ -3,20 +3,11 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link type="text/css" rel="stylesheet" href="{{ asset('/assets/css/vendor/bootstrap.min.css') }}" />
-        <link type="text/css" rel="stylesheet" href="{{ asset('/assets/css/vendor/bootstrap-theme.min.css') }}" />
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        <div class="container">
-            {% block body %}{% endblock %}
-        </div>
-        <script type="application/javascript">
-            var ajaxUrl = '/ajax/';
-        </script>
-        <script type="application/javascript" src="{{ asset('/assets/js/vendor/jquery.min.js') }}"></script>
-        <script type="application/javascript" src="{{ asset('/assets/js/vendor/bootstrap.min.js') }}"></script>
+        {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
