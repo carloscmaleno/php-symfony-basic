@@ -2,6 +2,12 @@ language: php
 
 sudo: false
 
+services:
+  - mysql
+
+before_script:
+  - mysql -e 'create database symfony;'
+
 install:
   - cp app/config/parameters.yml.travis app/config/parameters.yml
   - wget https://getcomposer.org/composer.phar
