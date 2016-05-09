@@ -5,10 +5,8 @@ sudo: false
 services:
   - mysql
 
-before_script:
-  - mysql -e 'create database symfony;'
-
 install:
+  - mysql -e 'create database symfony;'
   - cp app/config/parameters.yml.travis app/config/parameters.yml
   - wget https://getcomposer.org/composer.phar
   - php -dmemory_limit=2G composer.phar update --dev --no-interaction
