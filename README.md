@@ -1,4 +1,5 @@
-[![Dependency Status](https://www.versioneye.com/user/projects/565c84391b08f2000c0004a6/badge.svg?style=flat)](https://github.com/carloscmaleno/php-symfony-basic)
+[![Dependency Status](https://www.versioneye.com/user/projects/565d82010188bb000d000150/badge.svg?style=flat)](https://www.versioneye.com/user/projects/565d82010188bb000d000150) [![Build Status](https://travis-ci.org/carloscmaleno/php-symfony-basic.svg?branch=master)](https://travis-ci.org/carloscmaleno/php-symfony-basic)
+
 Symfony basic project
 ====
 Base 
